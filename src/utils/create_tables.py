@@ -1,4 +1,4 @@
-from src.services.database import db, Transaction
+from services.models import *
 
 
 def create_tables():

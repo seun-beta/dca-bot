@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 from peewee import (
     Model,
     DateTimeField,
@@ -12,8 +13,8 @@ db = PostgresqlDatabase(os.environ.get("DATABASE_URI"))
 
 
 class BaseModel(Model):
-    created_on = DateTimeField()
-    updated_on = DateTimeField()
+    created_on = DateTimeField(default=datetime.now)
+    updated_on = DateTimeField(default=datetime.now)
 
 
 class Transaction(BaseModel):

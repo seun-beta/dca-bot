@@ -27,4 +27,4 @@ class SendEmail:
             )
             logger.debug(response.text)
         except:
-            logger.exception(data)
+            logger.exception(response.text)

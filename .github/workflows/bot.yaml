@@ -31,7 +31,7 @@ jobs:
       - name: Run project
         run: |
           cd src
-          doppler run -- python dca_bot.py
+          python dca_bot.py
       # - name: Test with pytest
       #   run: |
       #     pytest

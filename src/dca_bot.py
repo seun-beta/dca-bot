@@ -1,12 +1,11 @@
 import os
 import requests
-
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-
 from services.log import logger
-from services.send_mail import SendEmail
 from services.models import Transaction
+from services.send_mail import SendEmail
+
 
 job = BlockingScheduler()
 
@@ -42,12 +41,9 @@ def buy_crypto():
         SendEmail.send_email(response.text)
 
 
-job.add_job(
-    buy_crypto,
-    "cron",
-    day_of_week="mon-sun",
-    hour="17",
-    minute="00",
-    timezone="Africa/Lagos",
-)
+@job.scheduled_job("cron", day_of_week="mon-fri", hour=17)
+def run_job():
+    buy_crypto()
+
+
 job.start()

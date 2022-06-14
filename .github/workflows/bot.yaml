@@ -32,6 +32,15 @@ jobs:
         run: |
           cd src
           python dca_bot.py
-      # - name: Test with pytest
-      #   run: |
-      #     pytest
+        env:
+          DATABASE_URI: ${{ secrets.DATABASE_URI }}
+          DOPPLER_CONFIG: ${{ secrets.DOPPLER_CONFIG }}
+          DOPPLER_ENVIRONMENT: ${{ secrets.DOPPLER_ENVIRONMENT }}
+          DOPPLER_PROJECT: ${{ secrets.DOPPLER_PROJECT }}
+          FROM_CURRENCY: ${{ secrets.FROM_CURRENCY }}
+          MAILGUN_API_KEY: ${{ secrets.MAILGUN_API_KEY }}
+          QUIDAX_BASE_URL: ${{ secrets.QUIDAX_BASE_URL }}
+          QUIDAX_SECRET_KEY: ${{ secrets.QUIDAX_SECRET_KEY }}
+          RECIEVER: ${{ secrets.RECIEVER }}
+          SENDER: ${{ secrets.SENDER }}
+          TO_CURRENCY: ${{ secrets.TO_CURRENCY }}

@@ -33,6 +33,7 @@ jobs:
           cd src
           python dca_bot.py
         env:
+          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
           DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
           DATABASE_USER: ${{ secrets.DATABASE_USER }}
           DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}

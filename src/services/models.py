@@ -8,8 +8,13 @@ from peewee import (
     PostgresqlDatabase,
 )
 
-
-db = PostgresqlDatabase(os.environ.get("DATABASE_URI"))
+db = PostgresqlDatabase(
+    os.environ.get("DATABASE_NAME"),
+    user=os.environ.get("DATABASE_USER"),
+    password=os.environ.get("DATABASE_PASSWORD"),
+    host=os.environ.get("DATABASE_HOST"),
+    port=os.environ.get("DATABASE_PORT"),
+)
 
 
 class BaseModel(Model):

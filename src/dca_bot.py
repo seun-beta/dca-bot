@@ -41,9 +41,10 @@ def buy_crypto():
         SendEmail.send_email(response.text)
 
 
-@job.scheduled_job("cron", day_of_week="mon-fri", hour=17)
-def run_job():
-    buy_crypto()
+if os.environ.get("ENVIRONMENT") == "production":
 
+    @job.scheduled_job("cron", day_of_week="mon-fri", hour=17)
+    def run_job():
+        buy_crypto()
 
-job.start()
+    job.start()

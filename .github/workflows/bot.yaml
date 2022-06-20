@@ -33,7 +33,11 @@ jobs:
           cd src
           python dca_bot.py
         env:
-          DATABASE_URI: ${{ secrets.DATABASE_URI }}
+          DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+          DATABASE_USER: ${{ secrets.DATABASE_USER }}
+          DATABASE_SECRET: ${{ secrets.DATABASE_SECRET }}
+          DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+          DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
           DOPPLER_CONFIG: ${{ secrets.DOPPLER_CONFIG }}
           DOPPLER_ENVIRONMENT: ${{ secrets.DOPPLER_ENVIRONMENT }}
           DOPPLER_PROJECT: ${{ secrets.DOPPLER_PROJECT }}

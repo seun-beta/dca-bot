@@ -35,7 +35,7 @@ jobs:
         env:
           DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
           DATABASE_USER: ${{ secrets.DATABASE_USER }}
-          DATABASE_SECRET: ${{ secrets.DATABASE_SECRET }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
           DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
           DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
           DOPPLER_CONFIG: ${{ secrets.DOPPLER_CONFIG }}
